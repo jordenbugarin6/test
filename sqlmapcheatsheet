@@ -64,6 +64,35 @@ a6xCFJaV+ofUL3IVi0mMRmOhc1nSz1GlykjGWxUM7Xk=
 M17Ge5KyvWUW9NZwJcRxEm7UPfUZuofqQHnGyDofydg= 
 M17Ge5KyvWUW9NZwJcRxEm7UPfUZuofqQHnGyDofydg= 
 ```
+
+
+
+
+
+
+
+```javascript
+// Common hashing methods to look for:
+crypto.createHash('sha256').update(password).digest('base64')
+crypto.createHash('sha256').update(password).digest('hex')
+bcrypt.hashSync(password, 10)
+bcrypt.compareSync(input, storedHash)
+crypto.pbkdf2(password, salt, iterations, keylen, 'sha512', ...)
 errors
 cannot cast type uuid to integer error
 A result was returned when none was expected."
+
+
+#prepare hashfile for cracking
+echo 'M17Ge5KyvWUW9NZwJcRxEm7UPfUZuofqQHnGyDofydg=' | base64 -d | xxd -p
+
+#johntheripper cheatsheet
+john --format=raw-sha256 --wordlist=/usr/share/wordlists/rockyou.txt hashes.txt
+john --format=bcrypt --wordlist=/usr/share/wordlists/rockyou.txt hashes.txt
+john --show hashes.txt
+
+#hashcat sha256
+hashcat -m 1400 hashes.txt /usr/share/wordlists/rockyou.txt
+
+hashcat -m 3200 hashes.txt /usr/share/wordlists/rockyou.txt
+
